@@ -1,15 +1,17 @@
 var todoList = {
     todos: [],
     displayTodos: function () {
-        this.todos.forEach(function (todo) {
-            if (this.todos.length === 0) {
-                console.log("Add something to do!");
-            } else if (todo.completed === true) {
-                console.log("(X)", todo.todoText)
-            } else {
-                console.log("( )", todo.todoText);
-            }
-        }, this)
+        if (this.todos.length === 0) {
+            console.log("Add something to do!");
+        } else {
+            this.todos.forEach(function (todo) {
+                if (todo.completed === true) {
+                    console.log("(X)", todo.todoText)
+                } else {
+                    console.log("( )", todo.todoText);
+                }
+            });
+        }
     },
     addTodo: function (newTodo) {
         this.todos.push({
@@ -19,7 +21,8 @@ var todoList = {
         this.displayTodos();
     },
     changeTodo: function (position, newTodo) {
-        this.todos[position].todoText = newTodo
+        this.todos[position].todoText = newTodo;
+        this.todos[position].completed = false;
         this.displayTodos();
     },
     deleteTodo: function (position) {
@@ -46,5 +49,36 @@ var todoList = {
             }
         });
         this.displayTodos();
+    }
+}
+
+var handlers = {
+    displayTodos: function () {
+        todoList.displayTodos();
+    },
+    toggleAll: function () {
+        todoList.toggleAll();
+    },
+    addTodo: function () {
+        var addTodoInputText = document.getElementById('addTodoInputText');
+        todoList.addTodo(addTodoInputText.value);
+        addTodoInputText.value = "";
+    },
+    changeTodo: function () {
+        var changeTodoInputPosition = document.getElementById('changeTodoInputPosition');
+        var changeTodoInputText = document.getElementById('changeTodoInputText');
+        todoList.changeTodo(changeTodoInputPosition.valueAsNumber, changeTodoInputText.value);
+        changeTodoInputPosition.value = "";
+        changeTodoInputText.value = "";
+    },
+    deleteTodo: function () {
+        var deleteTodoInputPosition = document.getElementById('deleteTodoInputPosition');
+        todoList.deleteTodo(deleteTodoInputPosition.valueAsNumber);
+        deleteTodoInputPosition.value = "";
+    },
+    toggleCompleted: function () {
+        var toggleCompletedInputPosition = document.getElementById('toggleCompletedInputPosition');
+        todoList.toggleCompleted(toggleCompletedInputPosition.valueAsNumber);
+        toggleCompletedInputPosition.value = "";
     }
 }

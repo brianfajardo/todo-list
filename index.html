@@ -6,8 +6,34 @@
     <title>Todo List</title>
 </head>
 
-<body
-    <script src="script.js"></script>
+<body>
+    <div>
+        <button onclick="handlers.displayTodos()">Display todos</button>
+<button onclick="handlers.toggleAll()">Toggle All</button>
+</div>
+
+<div>
+    <input id="addTodoInputText" type="text" placeholder="Add something!">
+    <button onclick="handlers.addTodo()">Add</button>
+</div>
+
+<div>
+    <input id="changeTodoInputPosition" type="number" placeholder="Target position">
+    <input id="changeTodoInputText" type="text" placeholder="New todo">
+    <button onclick="handlers.changeTodo()">Change</button>
+</div>
+
+<div>
+    <input id="deleteTodoInputPosition" type="number" placeholder="Target position">
+    <button onclick="handlers.deleteTodo()">Delete</button>
+</div>
+
+<div>
+    <input id="toggleCompletedInputPosition" type="number" placeholder="Target position">
+    <button onclick="handlers.toggleCompleted()">Toggle Completed</button>
+</div>
+
+<script src="script.js"></script>
 </body>
 
 </html>
