@@ -1,11 +1,15 @@
 var todoList = {
     todos: [],
     displayTodos: function () {
-        if (this.todos == 0) {
-            console.log("Add something todo!");
-        } else {
-            console.log(this.todos.todoText);
-        }
+        this.todos.forEach(function (todo) {
+            if (this.todos.length === 0) {
+                console.log("Add something to do!");
+            } else if (todo.completed === true) {
+                console.log("(X)", todo.todoText)
+            } else {
+                console.log("( )", todo.todoText);
+            }
+        }, this)
     },
     addTodo: function (newTodo) {
         this.todos.push({
@@ -21,5 +25,26 @@ var todoList = {
     deleteTodo: function (position) {
         this.todos.splice(position, 1);
         this.displayTodos()
+    },
+    toggleCompleted: function (position) {
+        this.todos[position].completed = !this.todos[position].completed;
+        this.displayTodos();
+    },
+    toggleAll: function () {
+        var totalTodos = this.todos.length;
+        var totalCompleted = 0;
+        this.todos.forEach(function (todo) {
+            if (todo.completed === true) {
+                totalCompleted++;
+            };
+        });
+        this.todos.forEach(function (todo) {
+            if (totalCompleted === totalTodos) {
+                todo.completed = false;
+            } else {
+                todo.completed = true;
+            }
+        });
+        this.displayTodos();
     }
 }
