@@ -82,3 +82,21 @@ var handlers = {
         toggleCompletedInputPosition.value = "";
     }
 }
+
+var view = {
+    displayTodos: function () {
+        var todoUl = document.querySelector('ul');
+        todoUl.innerHTML = "";
+        todoList.todos.forEach(function (todo) {
+            var todoLi = document.createElement('li');
+            var todoTextCompletedStatus = "";
+            if (todo.completed === true) {
+                todoTextCompletedStatus = "(X) " + todo.textText;
+            } else {
+                todoTextCompletedStatus = "( ) " + todo.todoText;
+            }
+            todoLi.textContent = todoTextCompletedStatus;
+            todoUl.appendChild(todoLi);
+        })
+    },
+}
