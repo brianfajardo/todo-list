@@ -1,0 +1,60 @@
+.content-area{
+    margin: 0 auto;
+    margin-top: 5%;
+    width: 60%;
+}
+
+.content-area h1 {
+    font-weight: bold;
+    font-size: 400%;
+}
+
+.notepad {
+    background-color: #F5F5F5;
+    box-shadow: 6px 6px 10px;
+    border-radius: 3px;
+    padding-bottom: 0px;
+    padding-top: 10px;
+    text-align: right;
+    padding-right: 10px;
+    font-size: 120%;
+}
+
+.notepad input {
+    border: 1px solid grey;
+    text-align: center;
+    margin-bottom: 10px;
+    border-radius: 2px;
+}
+
+.notepad button {
+    border: none;
+    color: white;
+    background-color: #5CB85C
+}
+
+ul {
+    margin-top: 25px;
+    margin-bottom: 40px;
+    margin: 0 auto;
+}
+li {
+    list-style-type: none;
+    font-size: 200%;
+    margin-bottom: 2px;
+    text-align: center;
+}
+
+li button {
+    border: none;
+    color: white;
+    background-color: red;
+    padding: 5px 10px;
+    margin-left: 20px;
+    border-radius: 4px;
+}
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+}

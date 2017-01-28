@@ -3,32 +3,35 @@
 
 <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
     <title>To Do List</title>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 </head>
 
 <body>
-    <h1>Remember to...</h1>
-
-    <ul>
-    </ul>
-
-    <div>
-        <input id="addTodoInputText" type="text" placeholder="Add something!">
-        <button onclick="handlers.addTodo()">Add</button>
-</div>
-
-<div>
-    <input id="changeTodoInputPosition" type="number" placeholder="Target position">
-    <input id="changeTodoInputText" type="text" placeholder="New to do">
-    <button onclick="handlers.changeTodo()">Change</button>
-</div>
-
-<div>
-    <input id="toggleCompletedInputPosition" type="number" placeholder="Target position">
-    <button onclick="handlers.toggleCompleted()">Toggle Completed</button>
-<button onclick="handlers.toggleAll()">Toggle All</button>
-</div>
-
+    <div class="container-fluid">
+        <div class="content-area">
+            <h1>Remember to...</h1>
+            <ul></ul>
+            <div class="notepad">
+                <input id="addTodoInputText" type="text" placeholder="Add something!">
+                <button onclick="handlers.addTodo()">Add</button>
+                <div>
+                    <input id="changeTodoInputText" type="text" placeholder="New to do">
+                 <input id="changeTodoInputPosition" type="number" placeholder="Target position (0, 1, 2..)">
+                 <button onclick="handlers.changeTodo()">Change</button>
+                </div>
+                <div>
+                    <input id="toggleCompletedInputPosition" type="number" placeholder="Target position">
+                    <button onclick="handlers.toggleCompleted()">Toggle Completed</button>
+                    <button onclick="handlers.toggleAll()">Toggle All</button>
+                </div>
+            </div>
+    <footer>
+        <p>&copy; 2017 - Brian Fajardo</p>
+    </footer>
+        </div>
+    </div>
 <script src="script.js"></script>
 </body>
 
